@@ -1,0 +1,34 @@
+{
+    "name": "obj ext",
+    "description": "my ext",
+    "version": "0.1.0",
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["jquery-3.5.1.min.js", "background.js", "spotify-web-api-js-master/src/spotify-web-api.js"]
+    },
+    "browser_action": {
+        "default_popup": "popup-sign-in.html"
+    },
+    "content_scripts": [
+        {
+        "matches": [
+          "https://*.youtube.com/*"
+        ],
+    
+        "js": ["jquery-3.5.1.min.js", "content.js"]
+        }
+    ],
+    "icons": { 
+        "16": "icon-16.png",
+        "48": "icon-48.png",
+       "128": "icon-128.png"
+    },
+    "permissions": [
+        "identity",
+        "https://www.youtube.com/*",
+        "https://*.spotify.com/*",
+        "tabs",
+        "activeTab", 
+        "webNavigation"
+    ] 
+}
